@@ -1,0 +1,8 @@
+1. *Variable a*: It is declared with pub(set) modifier, which means it can be *read* and *modified* from *any area*.
+2. *Variable b*: It is declared with pub modifier, which means it can be *read* from *any area, but **modified* only within the same type, which is SomeStruct. Therefore, it can be *modified* only in *AREA 1*.
+3. *Variable c*: It is declared with access(contract) modifier, which means it can be *read* and *modified* only within the same contract, which is SomeContract. Therefore, it can be *read* and *modified* in *AREA 1, **AREA 2, and **AREA 3, but not in **AREA 4*.
+4. *Variable d*: It is declared with access(self) modifier, which means it can be *read* and *modified* only within the same type or its subtypes, which is SomeStruct. Therefore, it can be *read* and *modified* only in *AREA 1*.
+
+1. *Function publicFunc*: It is declared with pub modifier, which means it can be called from *any area*.
+2. *Function contractFunc*: It is declared with access(contract) modifier, which means it can be called only within the same contract, which is SomeContract. Therefore, it can be called in *AREA 1* and *AREA 2, but not in **AREA 3* or *AREA 4*.
+3. *Function privateFunc*: It is declared with access(self) modifier, which means it can be called only within the same type or its subtypes, which is SomeStruct. Therefore, it can be called in *AREA 1* and *AREA 3, but not in **AREA 2* or *AREA 4*.
